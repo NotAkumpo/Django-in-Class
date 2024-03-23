@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task List</title>
+    <head>
+    <body>
+        <h2><li>{{ object }}</li></h2>
+        {% csrf_token %}
+        {{ form.as_div }}
+        <button>Submit</button>
+    </body>
+</html>
