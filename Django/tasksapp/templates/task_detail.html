@@ -4,9 +4,14 @@
         <title>Task List</title>
     <head>
     <body>
-        <h2><li>{{ object }}</li></h2>
-        {% csrf_token %}
-        {{ form.as_div }}
-        <button>Submit</button>
+        {% if object.task_image %}
+        <img src="{{ object.task_image.url}}" alt="">
+        {% endif %}
+        <p>{{ object }}</p>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_div }}
+            <button>Submit</button>
+        </form>
     </body>
 </html>
